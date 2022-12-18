@@ -103,3 +103,6 @@ alias v="/usr/bin/nvim"
 
 # Source personal ZSH profile
 source ~/.zsh_profile
+
+# Add user@host to robby
+PROMPT="$fg[cyan]%}$USER@%{$fg[blue]%}%m ${PROMPT}"
