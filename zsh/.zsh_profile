@@ -1,2 +1,8 @@
 export GOPATH=$HOME/go
+
+# XDG Configs
 export XDG_CONFIG_HOME="$HOME/.config"
+
+# Kubernetes
+alias k="kubectl" # Alias
+source <(kubectl completion zsh) # Completion

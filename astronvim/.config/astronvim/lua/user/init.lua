@@ -240,7 +240,7 @@ local config = {
       --   end,
       -- },
 
-      -- Tokyo Night Theme
+      -- Tokyo Night Color Scheme
       ['folke/tokyonight.nvim'] = {}
     },
     -- All other entries override the require("<key>").setup({...}) call for default plugins
