@@ -4,7 +4,7 @@ USER="biem97"
 REPO_NAME=".dotfiles"
 SOURCE="https://github.com/$USER/$REPO_NAME"
 TARBALL="$SOURCE/tarball/master"
-TARGET="$HOME/.test_dotfiles"
+TARGET="$HOME/.dotfiles"
 TAR_CMD="tar -xzv -C "$TARGET" --strip-components=1 --exclude='{.gitignore}'"
 
 is_executable() {
