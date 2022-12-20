@@ -1,8 +1,7 @@
-#!/bin/bash
+#!/bin/sh
 
 # Installing git
 echo "Installing git"
-
 
 # Installing AstroNvim
 echo "Installing astronvim"
