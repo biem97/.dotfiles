@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 USER="biem97"
 REPO_NAME=".dotfiles"
