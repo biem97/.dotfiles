@@ -25,7 +25,7 @@ zstyle ':vcs_info:git:*' formats " %{$fg[blue]%}(%{$fg[red]%}%m%u%c%{$fg[yellow]
 
 
 # Replace @ with beautiful icon by season
-CURRENT_MONTH=$(date +%B)ala
+CURRENT_MONTH=$(date +%B)
 
 # Season icons
 SPRING_ICONS=🌼
