@@ -49,7 +49,7 @@ case $CURRENT_MONTH in
     ;;
 
   "December" | "January" | "February")
-    ICON=${SPRING_ICONS}
+    ICON=${WINTER_ICONS}
     ;;
 
   *)
