@@ -1,29 +1,28 @@
 #!/bin/sh
 [ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
 
-
 # history
 HISTFILE=~/.zsh_history
 
-# source
-source ~/.config/zsh/.zsh_profile
-plug "$HOME/.config/zsh/prompt.zsh-theme"
+# source profile
+for FILE in $HOME/.config/zsh/plugins/profile/*; do source $FILE; done
+
+# plugins that have to source before
+for FILE in $HOME/.config/zsh/plugins/before/*; do source $FILE; done
 
 # plugins
-plug "esc/conda-zsh-completion"
+plug "zsh-users/zsh-completions"
 plug "zsh-users/zsh-autosuggestions"
 plug "hlissner/zsh-autopair"
 plug "zap-zsh/supercharge"
 plug "zap-zsh/vim"
-# plug "zap-zsh/zap-prompt"
 plug "zap-zsh/fzf"
 plug "zap-zsh/exa"
 plug "zsh-users/zsh-syntax-highlighting"
 
+# plugins that have to source after
+for FILE in $HOME/.config/zsh/plugins/after/*; do source $FILE; done
 
-# keybinds
-# bindkey '^ ' autosuggest-accept
-
+# Export PATH
 export PATH="$HOME/.local/bin":$PATH
-
 
