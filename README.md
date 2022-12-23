@@ -1,4 +1,6 @@
-# .dotfiles
+# My `.dotfiles`
+
+## Installation
 
 ```bash
 git clone https://github.com/biem97/.dotfiles
@@ -11,3 +13,4 @@ or
 ```bash
 stow *\ # ignore anything that are not dirs
 ```
+
