@@ -1,8 +1,15 @@
 #!/bin/sh
 
+if [ "$euid" -ne 0 ]
+  then echo "🔥 Please run this script with sudo 🔥"
+  exit
+fi 
+
+# Update apt get
+apt-get update
+
 # Installing ZSH to your default shell
-sudo apt-get update
-sudo apt-get install zsh -y
+apt-get install zsh -y
 chsh -s $(which zsh)
 
 # Installing zap - Plugins manager for ZSH
@@ -22,3 +29,9 @@ sudo apt update
 sudo apt install python3-dev python3-pip python3-setuptools
 pip3 install thefuck --user
 
+# Installing tmux
+apt install tmux
+tmux source ~/.tmux.conf`
+
+# Installing i3
+apt install i3
