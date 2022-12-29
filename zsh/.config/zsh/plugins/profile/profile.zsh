@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 # XDG Configs
 export XDG_CONFIG_HOME="$HOME/.config"

@@ -13,6 +13,7 @@ fi
 HISTFILE=~/.zsh_history
 
 # source profile
+for FILE in $HOME/.config/zsh/plugins/profile/*; do source $FILE; done
 
 # plugins that have to source before
 for FILE in $HOME/.config/zsh/plugins/before/*; do source $FILE; done
@@ -28,13 +29,11 @@ plug "zap-zsh/exa"
 plug "zsh-users/zsh-syntax-highlighting"
 plug "romkatv/powerlevel10k"
 
-# plugins that have to source after
-for FILE in $HOME/.config/zsh/plugins/after/*; do source $FILE; done
-
 # Export PATH
 export PATH="$HOME/.local/bin":$PATH
 
+# plugins that have to source after
+for FILE in $HOME/.config/zsh/plugins/after/*; do source $FILE; done
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-for FILE in $HOME/.config/zsh/plugins/profile/*; do source $FILE; done

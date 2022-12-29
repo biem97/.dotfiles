@@ -23,7 +23,6 @@ formatters.setup {
   { command = "gofumpt", filetypes = { "go" } },
 }
 
-lvim.format_on_save.pattern = { "*.go" }
 
 ------------------------
 -- Dap
