@@ -18,5 +18,9 @@ _darcs
 \#.*\#       # emacs autosave files
 
 ^/README.*
+^/DEBUG.*
 ^/LICENSE.*
 ^/COPYING
+
+remote_install.sh
+install.sh

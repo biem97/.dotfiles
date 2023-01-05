@@ -11,6 +11,6 @@ bash install.sh
 or
 
 ```bash
-stow *\ # ignore anything that are not dirs
+stow .
 ```
 

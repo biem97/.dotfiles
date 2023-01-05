@@ -20,8 +20,16 @@ lvim.colorscheme = "lunar"
 lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
--- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
--- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
+lvim.keys.normal_mode["<CR>"] = "o<ESC>"
+-- lvim.keys.normal_mode["<S-CR>"] = "O<ESC>" -- Won't work with alacritty
+lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
+lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
+lvim.keys.normal_mode["|"] = ":vsplit<CR>"
+lvim.keys.normal_mode["-"] = ":split<CR>"
+lvim.keys.normal_mode["<C-d>"] = "<C-d>zz"
+lvim.keys.normal_mode["<C-f>"] = "<C-f>zz"
+lvim.keys.normal_mode["<C-u>"] = "<C-u>zz"
+lvim.keys.normal_mode["<C-b>"] = "<C-b>zz"
 -- unmap a default keymappingkk
 -- vim.keymap.del("n", "<C-Up>")
 -- override a default keymapping
@@ -29,21 +37,21 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 
 -- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
 -- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
--- local _, actions = pcall(require, "telescope.actions")
--- lvim.builtin.telescope.defaults.mappings = {
---   -- for input mode
---   i = {
---     ["<C-j>"] = actions.move_selection_next,
---     ["<C-k>"] = actions.move_selection_previous,
---     ["<C-n>"] = actions.cycle_history_next,
---     ["<C-p>"] = actions.cycle_history_prev,
---   },
---   -- for normal mode
---   n = {
---     ["<C-j>"] = actions.move_selection_next,
---     ["<C-k>"] = actions.move_selection_previous,
---   },
--- }
+local _, actions = pcall(require, "telescope.actions")
+lvim.builtin.telescope.defaults.mappings = {
+  -- for input mode
+  i = {
+    ["<C-j>"] = actions.move_selection_next,
+    ["<C-k>"] = actions.move_selection_previous,
+    ["<C-n>"] = actions.cycle_history_next,
+    ["<C-p>"] = actions.cycle_history_prev,
+  },
+  -- for normal mode
+  n = {
+    ["<C-j>"] = actions.move_selection_next,
+    ["<C-k>"] = actions.move_selection_previous,
+  },
+}
 
 -- Change theme settings
 -- lvim.builtin.theme.options.dim_inactive = true
@@ -68,6 +76,9 @@ lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
+lvim.builtin.nvimtree.setup.filters.custom = {
+  "^.git$"
+}
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
@@ -169,10 +180,14 @@ lvim.plugins = {
   --   "folke/trouble.nvim",
   --   cmd = "TroubleToggle",
   -- },
+  --
+  -- lsp diagnostics highlight groups for non lsp colorschemes
   {
     "folke/lsp-colors.nvim",
     event = "BufRead",
   },
+  --
+  -- Color highlighter
   {
     "norcalli/nvim-colorizer.lua",
     config = function()
@@ -187,6 +202,14 @@ lvim.plugins = {
       })
     end,
   },
+  --
+  -- Automatically saving work whenever you make changes
+  -- {
+  --   "Pocco81/auto-save.nvim",
+  --   config = function()
+  --     require("auto-save").setup()
+  --   end,
+  -- },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
@@ -203,5 +226,8 @@ lvim.plugins = {
 --   end,
 -- })
 
+-- Native vim options
+-- Change gui cursor
+-- vim.opt.guicursor = ""
 
-require("golang")
+reload "nosyn.lsp"

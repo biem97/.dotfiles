@@ -7,6 +7,7 @@ fi
 
 # Update apt get
 apt-get update
+apt update
 
 # Installing ZSH to your default shell
 apt-get install zsh -y
@@ -25,8 +26,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 
 # Installing thefuck
-sudo apt update
-sudo apt install python3-dev python3-pip python3-setuptools
+apt install python3-dev python3-pip python3-setuptools
 pip3 install thefuck --user
 
 # Installing tmux
@@ -35,3 +35,12 @@ tmux source ~/.tmux.conf`
 
 # Installing i3
 apt install i3
+
+# Installing neofetch
+apt install neofetch
+
+# Installing stow
+apt-get install stow
+
+# source dotfiles
+stow .
