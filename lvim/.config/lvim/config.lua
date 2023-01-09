@@ -231,3 +231,4 @@ lvim.plugins = {
 -- vim.opt.guicursor = ""
 
 reload "nosyn.lsp"
+reload "nosyn.telescope"
