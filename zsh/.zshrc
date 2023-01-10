@@ -23,11 +23,12 @@ plug "zsh-users/zsh-completions"
 plug "zsh-users/zsh-autosuggestions"
 plug "hlissner/zsh-autopair"
 plug "zap-zsh/supercharge"
-plug "zap-zsh/vim"
+# plug "zap-zsh/vim"
 plug "zap-zsh/fzf"
-plug "zap-zsh/exa"
+# plug "zap-zsh/exa"
 plug "zsh-users/zsh-syntax-highlighting"
 plug "romkatv/powerlevel10k"
+# plug "wintermi/zsh-golang"
 
 # Export PATH
 export PATH="$HOME/.local/bin":$PATH
@@ -37,3 +38,4 @@ for FILE in $HOME/.config/zsh/plugins/after/*; do source $FILE; done
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+. /home/nosyn/.asdf/asdf.sh
