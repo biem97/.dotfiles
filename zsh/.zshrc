@@ -36,6 +36,10 @@ export PATH="$HOME/.local/bin":$PATH
 # plugins that have to source after
 for FILE in $HOME/.config/zsh/plugins/after/*; do source $FILE; done
 
+# source local custom zsh
+source ~/.zsh_local
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 . /home/nosyn/.asdf/asdf.sh
+
