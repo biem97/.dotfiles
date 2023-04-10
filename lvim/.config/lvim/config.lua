@@ -26,6 +26,8 @@ lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 lvim.keys.normal_mode["|"] = ":vsplit<CR>"
 lvim.keys.normal_mode["-"] = ":split<CR>"
+lvim.keys.normal_mode["<S-A-Up>"] = "yykp" -- Copy line up
+lvim.keys.normal_mode["<S-A-Down>"] = "yyp" -- Copy line down
 lvim.keys.normal_mode["<C-d>"] = "<C-d>zz"
 lvim.keys.normal_mode["<C-f>"] = "<C-f>zz"
 lvim.keys.normal_mode["<C-u>"] = "<C-u>zz"
@@ -80,6 +82,7 @@ lvim.builtin.nvimtree.setup.filters.custom = {
   "^.git$"
 }
 lvim.builtin.gitsigns.opts.current_line_blame = true
+lvim.builtin.gitsigns.opts.current_line_blame_opts.delay = 500
 lvim.builtin.project.active = false
 
 -- if you don't want all the parsers change this to a table of the ones you want
@@ -157,6 +160,10 @@ formatters.setup {
     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
     filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" }
   },
+  {
+    command = "sql-formatter",
+    filetypes = { "sql" }
+  }
 }
 
 -- set additional linters
@@ -173,16 +180,21 @@ linters.setup {
   {
     command = "codespell",
     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
-    filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact", "vue", "svelte" }
+    filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact", "vue", "svelte" },
   },
+  -- {
+  --   command = "sqlfluff",
+  --   filetypes = { "sql" },
+  --   -- extra_args = { "--dialec" }
+  -- }
 }
 
 -- Additional Plugins
 lvim.plugins = {
-  -- {
-  --   "folke/trouble.nvim",
-  --   cmd = "TroubleToggle",
-  -- },
+  {
+    "folke/trouble.nvim",
+    cmd = "TroubleToggle",
+  },
   --
   -- lsp diagnostics highlight groups for non lsp colorschemes
   {
