@@ -16,9 +16,6 @@ vim.keymap.set("v", "<S-A-k>", "yjp==gv", { silent = true, desc = "Copy line dow
 vim.keymap.set("n", "<CR>", "o<ESC>", { silent = true, desc = "Add a new line on the next cursor" })
 vim.keymap.set("n", "<S-CR>", "O<ESC>", { silent = true, desc = "Add a new line on the previous cursor" })
 
--- Comment
-vim.keymap.set("n", "<C-/>", "Vgc", { silent = true, desc = "Comment line" })
-
 --   Naviation
 vim.keymap.set(
   "n",
